@@ -4,12 +4,10 @@ use wasm_bindgen::prelude::*;
 #[wasm_bindgen]
 extern "C" {
     fn activateCamera();
-    fn deactivateCamera();
     fn switchCamera();
 }
 
 pub fn render_content<'a>(cx: &Scope<'a>) -> Element<'a> {
-    // Function to switch the camera
     let on_switch_click = |_: MouseEvent| {
         switchCamera();
     };

@@ -1,18 +1,14 @@
 let currentStream;
 let useFrontCamera = true;
 
-// Function to switch the camera
 function switchCamera() {
     useFrontCamera = !useFrontCamera;
     if (currentStream) {
-        // Stop the current stream
         currentStream.getTracks().forEach(track => track.stop());
-        // Re-initialize the camera with the new facingMode
         activateCamera();
     }
 }
 
-// Add an event listener to initialize the camera when the PWA loads
 window.addEventListener("load", () => {
     const videoElement = document.getElementById("cameraVideo");
     
