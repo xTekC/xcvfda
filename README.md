@@ -1,6 +1,8 @@
 # XCVFDA
 Cross-platform Computer Vision Face Detection Application
 
-Icon
+Attributions
 <br>
-<a href="https://www.flaticon.com/free-icons/vision" title="vision icons">Vision icons created by Assia Benkerroum  - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/vision">created by Assia Benkerroum  - Flaticon</a>
+<br>
+<a href="https://www.flaticon.com/free-animated-icons/refresh">created by Freepik - Flaticon</a>
