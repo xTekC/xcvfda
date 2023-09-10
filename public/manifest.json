@@ -1,0 +1,34 @@
+{
+  "name": "XCVFDA",
+  "icons": [
+    {
+      "src": "logo_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo_512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "logo_512.png",
+      "type": "image/png",
+      "sizes": "any",
+      "purpose": "any"
+    }
+  ],
+  "start_url": "/",
+  "id": "/",
+  "display": "standalone",
+  "display_override": ["window-control-overlay", "standalone"],
+  "scope": "/",
+  "theme_color": "#000000",
+  "background_color": "#c0c0c0",
+  "short_name": "XCVFDA",
+  "description": "XCVFDA - Cross-platform Computer Vision Face Detection Application",
+  "dir": "ltr",
+  "lang": "en",
+  "orientation": "portrait"
+}
