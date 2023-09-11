@@ -31,7 +31,7 @@ pub fn render_content<'a>(cx: &Scope<'a>) -> Element<'a> {
                 style: "height: 70px;",  
                 button {
                     onclick: on_switch_click,
-                    //class: "button is-black",
+                    class: "button is-ghost is-rounded",
                     style: "width: 80px; height: 60px; margin: 5px 0;",  
                     img {
                         src: "/flip.png",
