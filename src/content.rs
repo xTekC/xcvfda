@@ -32,7 +32,7 @@ pub fn render_content<'a>(cx: &Scope<'a>) -> Element<'a> {
                 button {
                     onclick: on_switch_click,
                     class: "button is-ghost is-rounded",
-                    style: "width: 80px; height: 60px; margin: 5px 0;",  
+                    style: "width: 85px; height: 60px; margin: 5px 0;",  
                     img {
                         src: "/flip.png",
                         alt: "Switch Camera Icon",
