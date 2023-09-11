@@ -27,7 +27,7 @@ pub fn render_content<'a>(cx: &Scope<'a>) -> Element<'a> {
             }
 
             div {
-                class: "is-flex is-justify-content-center",
+                class: "has-background-black is-flex is-justify-content-center",
                 style: "height: 70px;",  
                 button {
                     onclick: on_switch_click,
