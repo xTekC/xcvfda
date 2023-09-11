@@ -25,7 +25,7 @@
   "display_override": ["window-control-overlay", "standalone"],
   "scope": "/",
   "theme_color": "#000000",
-  "background_color": "#808080",
+  "background_color": "#000000",
   "short_name": "XCVFDA",
   "description": "XCVFDA - Cross-platform Computer Vision Face Detection Application",
   "dir": "ltr",
