@@ -1,17 +1,8 @@
 let currentStream;
 let useFrontCamera = true;
 
-function switchCamera() {
-    useFrontCamera = !useFrontCamera;
-    if (currentStream) {
-        currentStream.getTracks().forEach(track => track.stop());
-        activateCamera();
-    }
-}
-
-window.addEventListener("load", () => {
+function activateCamera() {
     const videoElement = document.getElementById("cameraVideo");
-    
     try {
         const constraints = {
             video: {
@@ -29,7 +20,50 @@ window.addEventListener("load", () => {
     } catch (err) {
         console.log('Error accessing camera:', err);
     }
-});
+}
+
+function switchCamera() {
+    useFrontCamera = !useFrontCamera;
+    if (currentStream) {
+        currentStream.getTracks().forEach(track => track.stop());
+    }
+    activateCamera();
+}
+
+window.addEventListener("load", activateCamera);
+
+// let currentStream;
+// let useFrontCamera = true;
+
+// function switchCamera() {
+//     useFrontCamera = !useFrontCamera;
+//     if (currentStream) {
+//         currentStream.getTracks().forEach(track => track.stop());
+//         activateCamera();
+//     }
+// }
+
+// window.addEventListener("load", () => {
+//     const videoElement = document.getElementById("cameraVideo");
+    
+//     try {
+//         const constraints = {
+//             video: {
+//                 facingMode: useFrontCamera ? "user" : "environment"
+//             }
+//         };
+//         navigator.mediaDevices.getUserMedia(constraints)
+//             .then(stream => {
+//                 videoElement.srcObject = stream;
+//                 currentStream = stream;
+//             })
+//             .catch(err => {
+//                 console.log('Error accessing camera:', err);
+//             });
+//     } catch (err) {
+//         console.log('Error accessing camera:', err);
+//     }
+// });
 
 // let currentStream;
 // let useFrontCamera = true;
