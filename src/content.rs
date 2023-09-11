@@ -28,13 +28,13 @@ pub fn render_content<'a>(cx: &Scope<'a>) -> Element<'a> {
 
             div {
                 class: "has-background-black is-flex is-justify-content-center",
-                style: "height: 70px;",  
+                style: "height: 70px; background-color: #000000;",  
                 button {
                     onclick: on_switch_click,
                     class: "button is-black",
                     style: "width: 80px; height: 60px; margin: 5px 0;",  
                     img {
-                        src: "/flip.png",
+                        src: "/switch-camera.png",
                         alt: "Switch Camera Icon",
                         style: "width: 100%; height: 100%;",
                     }
