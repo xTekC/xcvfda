@@ -14,7 +14,7 @@ pub fn render_content<'a>(cx: &Scope<'a>) -> Element<'a> {
     cx.render(rsx! {
         div {
             class: "has-background-black has-text-white is-flex is-flex-direction-column is-align-items-center is-justify-content-center",
-            style: "height: calc(100vh - 100px); overflow: hidden;",
+            style: "height: calc(100vh - 100px); overflow: hidden; background-color: #000000;",
 
             div {
                 class: "has-background-black is-flex is-justify-content-center is-align-items-center",
@@ -28,13 +28,13 @@ pub fn render_content<'a>(cx: &Scope<'a>) -> Element<'a> {
 
             div {
                 class: "has-background-black is-flex is-justify-content-center",
-                style: "height: 70px; background-color: #000000;",  
+                style: "height: 70px;",  
                 button {
                     onclick: on_switch_click,
                     class: "button is-black",
                     style: "width: 80px; height: 60px; margin: 5px 0;",  
                     img {
-                        src: "/switch-camera.png",
+                        src: "/flip.png",
                         alt: "Switch Camera Icon",
                         style: "width: 100%; height: 100%;",
                     }
