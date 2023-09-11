@@ -31,5 +31,5 @@ function switchCamera() {
 
 window.addEventListener("load", () => {
     // Delay activation slightly to ensure the DOM has fully loaded
-    setTimeout(activateCamera, 69);
+    setTimeout(activateCamera, 100);
 });
