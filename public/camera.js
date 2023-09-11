@@ -17,7 +17,7 @@ async function activateCamera() {
 
         const stream = await navigator.mediaDevices.getUserMedia(constraints);
         videoElement.srcObject = stream;
-        await videoElement.play(); // ensure the video starts playing
+        await videoElement.play();
         currentStream = stream;
     } catch (err) {
         console.log('Error accessing camera:', err);
@@ -31,7 +31,7 @@ function switchCamera() {
 
 window.addEventListener("load", () => {
     // Delay activation slightly to ensure the DOM has fully loaded
-    setTimeout(activateCamera, 500);
+    setTimeout(activateCamera, 69);
 });
 
 // let currentStream;
