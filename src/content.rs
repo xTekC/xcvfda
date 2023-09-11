@@ -17,7 +17,7 @@ pub fn render_content<'a>(cx: &Scope<'a>) -> Element<'a> {
             style: "height: calc(100vh - 100px); overflow: hidden;",
 
             div {
-                class: "is-flex is-justify-content-center is-align-items-center",
+                class: "has-background-black is-flex is-justify-content-center is-align-items-center",
                 style: "height: calc(100vh - 100px); width: 100%; border: 2px solid grey;",
                 video {
                     id: "cameraVideo",
