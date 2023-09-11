@@ -1,22 +1,24 @@
 let currentStream;
 let useFrontCamera = true;
 
-function activateCamera() {
+async function activateCamera() {
+    if (currentStream) {
+        currentStream.getTracks().forEach(track => track.stop());
+    }
+
     const videoElement = document.getElementById("cameraVideo");
+    
     try {
         const constraints = {
             video: {
                 facingMode: useFrontCamera ? "user" : "environment"
             }
         };
-        navigator.mediaDevices.getUserMedia(constraints)
-            .then(stream => {
-                videoElement.srcObject = stream;
-                currentStream = stream;
-            })
-            .catch(err => {
-                console.log('Error accessing camera:', err);
-            });
+
+        const stream = await navigator.mediaDevices.getUserMedia(constraints);
+        videoElement.srcObject = stream;
+        await videoElement.play(); // ensure the video starts playing
+        currentStream = stream;
     } catch (err) {
         console.log('Error accessing camera:', err);
     }
@@ -24,13 +26,47 @@ function activateCamera() {
 
 function switchCamera() {
     useFrontCamera = !useFrontCamera;
-    if (currentStream) {
-        currentStream.getTracks().forEach(track => track.stop());
-    }
     activateCamera();
 }
 
-window.addEventListener("load", activateCamera);
+window.addEventListener("load", () => {
+    // Delay activation slightly to ensure the DOM has fully loaded
+    setTimeout(activateCamera, 500);
+});
+
+// let currentStream;
+// let useFrontCamera = true;
+
+// function activateCamera() {
+//     const videoElement = document.getElementById("cameraVideo");
+//     try {
+//         const constraints = {
+//             video: {
+//                 facingMode: useFrontCamera ? "user" : "environment"
+//             }
+//         };
+//         navigator.mediaDevices.getUserMedia(constraints)
+//             .then(stream => {
+//                 videoElement.srcObject = stream;
+//                 currentStream = stream;
+//             })
+//             .catch(err => {
+//                 console.log('Error accessing camera:', err);
+//             });
+//     } catch (err) {
+//         console.log('Error accessing camera:', err);
+//     }
+// }
+
+// function switchCamera() {
+//     useFrontCamera = !useFrontCamera;
+//     if (currentStream) {
+//         currentStream.getTracks().forEach(track => track.stop());
+//     }
+//     activateCamera();
+// }
+
+// window.addEventListener("load", activateCamera);
 
 // let currentStream;
 // let useFrontCamera = true;
