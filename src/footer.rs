@@ -22,7 +22,8 @@ pub fn render_footer<'a>(cx: &Scope<'a>) -> Element<'a> {
 
     cx.render(rsx! {
         div {
-            style: "text-align: center; background-color: #000000; color: #FFFFFF; padding: 1em;",
+            // style: "text-align: center; background-color: #000000; color: #FFFFFF; padding: 1em;",
+            style: "text-align: center; background-color: #000000; color: #FFFFFF; padding: 1em; flex-shrink: 0;", // Prevent the footer from shrinking
             button { 
                 style: "background-color: #000000; color: #FFFFFF;", 
                 onclick: on_switch_click,
