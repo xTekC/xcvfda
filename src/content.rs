@@ -16,7 +16,7 @@ cx.render(rsx! {
         style: "flex: 1; width: 99%; margin: auto; position: relative;", // Adjust the container to have a relative position
         video {
             id: "cameraVideo",
-            style: "width: 100%; height: auto; max-height: 80vh; object-fit: cover; position: absolute; top: 0; bottom: 0; left: 0; right: 0;", // Set the video to cover the container and position it absolutely within
+            style: "width: 100%; height: auto; max-height: 80vh; object-fit: fill; position: absolute; top: 0; bottom: 0; left: 0; right: 0;", // Set the video to cover the container and position it absolutely within
             autoplay: true,
         }
     }
