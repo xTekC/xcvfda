@@ -10,7 +10,8 @@ wfs:
 # Serve web app
 s:
     @clear
-    @dx serve
+    @printf "\nhttp://127.0.0.1:8080/#dev\n\n"
+    @dx serve --hot-reload
 
 # Watch web app
 w:

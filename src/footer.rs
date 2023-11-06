@@ -22,18 +22,11 @@ pub fn render_footer<'a>(cx: &Scope<'a>) -> Element<'a> {
 
     cx.render(rsx! {
         div {
-            //style: "text-align: center; background-color: #000000; color: #FFFFFF; padding: 1em;",
-            style: "display: flex; justify-content: center; padding-top: 1em; padding-bottom: 1.5em;",
-            //p { "..." }
-            button {
+            style: "text-align: center; background-color: #000000; color: #FFFFFF; padding: 1em;",
+            button { 
+                style: "background-color: #000000; color: #FFFFFF;", 
                 onclick: on_switch_click,
-                class: "button is-ghost is-rounded",
-                style: "outline: none; width: 85px; height: 60px; margin: 5px 0;",  
-                img {
-                    src: "/flip.png",
-                    alt: "Switch Camera Icon",
-                    style: "width: 100%; height: 100%;",
-                }
+                "< >"
             }
         }
     })

@@ -1,36 +1,88 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>{app_title}</title>
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register(
-        '/sw.js'
-      );
-    }
-  </script>
-  <link rel="manifest" href="manifest.json">
-  <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="UTF-8" />
-  {style_include}
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-</head>
-<body>
-  <div id="main"></div>
-  <script type="module">
-    import init from "/{base_path}/assets/dioxus/{app_name}.js";
-    init("/{base_path}/assets/dioxus/{app_name}_bg.wasm").then(wasm => {
-      if (wasm.__wbindgen_start == undefined) {
-        wasm.main();
-      }
-    });
-  </script>
-  {script_include}
-    <!-- Video element for camera feed -->
-    <!-- <video id="cameraVideo" width="640" height="480"></video> -->
-    <!-- Canvas for OpenCV output -->
-    <!-- <canvas id="outputCanvas" width="640" height="480"></canvas> -->
-  <!-- <script async src="https://docs.opencv.org/master/opencv.js" onload="onOpenCvReady();" type="text/javascript"></script> -->
-</body>
-</html>
+<!-- /*************************
+ *  Copyright (c) xTekC.      *
+ *  Licensed under MPL-2.0.   *
+ *  See LICENSE for details.  *
+ *                            *
+ ******************************/ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+   <meta name="description" content="Cross-platform Computer Vision Face Detection Application">
+   <title>{app_title}</title>
+   <script>
+     if ('serviceWorker' in navigator) {
+       navigator.serviceWorker.register('/sw.js');
+     }
+   </script>
+   <link rel="manifest" href="manifest.json">
+   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> -->
+   <!-- <link rel="stylesheet" href="styles.scss"> -->
+   {style_include}
+ 
+   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#808080">
+   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000">
+ 
+   <style>
+       html {
+           /* Remove touch delay: */
+           touch-action: manipulation;
+       }
+ 
+       body {
+           background: #808080;
+       }
+ 
+       @media (prefers-color-scheme: dark) {
+           body {
+               background: #000000;
+           }
+       }
+ 
+       html,
+       body {
+           overflow: hidden;
+           margin: 0 !important;
+           padding: 0 !important;
+           height: 100%;
+           width: 100%;
+       }
+ 
+       .centered {
+           margin-right: auto;
+           margin-left: auto;
+           display: block;
+           position: absolute;
+           top: 50%;
+           left: 50%;
+           transform: translate(-50%, -50%);
+           color: #f0f0f0;
+           font-size: 24px;
+           font-family: Helvetica, sans-serif;
+           text-align: center;
+       }
+   </style>
+ </head>
+ <body>
+   <div id="main"></div>
+   <script type="module">
+     import init from "/{base_path}/assets/dioxus/{app_name}.js";
+     init("/{base_path}/assets/dioxus/{app_name}_bg.wasm").then(wasm => {
+       if (wasm.__wbindgen_start == undefined) {
+         wasm.main();
+       }
+     });
+ 
+       // Disable caching during development to always view the latest version.
+       if ('serviceWorker' in navigator && window.location.hash !== "#dev") {
+           window.addEventListener('load', function () {
+               navigator.serviceWorker.register('sw.js');
+           });
+       }
+   </script>
+   {script_include}
+ </body>
+ </html>
+ 

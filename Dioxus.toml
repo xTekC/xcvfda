@@ -33,7 +33,7 @@ watch_path = ["src", "public"]
 style = []
 
 # Javascript code file
-script = ["camera.js", "detect_face.js", "https://docs.opencv.org/master/opencv.js"]
+script = ["camera.js"]
 
 [web.resource.dev]
 
