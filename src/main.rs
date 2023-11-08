@@ -17,13 +17,19 @@ fn app<'a>(cx: Scope<'a>) -> Element<'a> {
     let main_content = content::render_content(&cx);
     cx.render(rsx! {
         div {
-            style: "display: flex; flex-direction: column; height: 100vh; background-color: #000000; color: #FFFFFF;",
-            header,
-            div {
-                style: "flex: 1; overflow: auto; background-color: #000000; width: 99%; margin: auto; border: 2px solid grey;",
-                main_content,
-            },
-            footer,
+          style: "display: flex; flex-direction: column; height: 100vh; background-color: #000000; color: #FFFFFF;",
+          div {
+              style: "height: 10vh; background-color: #000000; color: #FFFFFF;",
+              header,
+          },
+          div {
+              style: "flex: 1; max-height: calc(100vh - 30vh); overflow: hidden; background-color: #000000; width: 99%; margin: auto; border: 2px solid grey;",
+              main_content,
+          },
+          div {
+              style: "height: 20vh; background-color: #000000; color: #FFFFFF;",
+              footer,
+          },
         }
-    })
+       })  
 }
